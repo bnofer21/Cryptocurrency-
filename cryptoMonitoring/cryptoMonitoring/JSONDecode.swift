@@ -10,10 +10,6 @@ import Foundation
 let urlString = "https://rest.coinapi.io/v1/assets?apikey=87F2B9A6-992C-4212-ADAC-190444275DA9"
 var resultsReturn = [Coin]()
 
-// Make timer for update price every 10s, timer ready but cells update only when invisible
-// Save fav on phone
-// Update Button
-
 func getData() {
     let url = URL(string: urlString)
     if let url = url {
