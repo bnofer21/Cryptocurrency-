@@ -23,3 +23,5 @@ struct Coin: Decodable, Equatable {
     }
     
 }
+
+

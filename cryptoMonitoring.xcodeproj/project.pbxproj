@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B434C552907EF8E006AC4A6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B434C542907EF8E006AC4A6 /* Kingfisher */; };
 		5B95ED5928EAC7C100EA54BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED5828EAC7C100EA54BB /* AppDelegate.swift */; };
 		5B95ED5B28EAC7C100EA54BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED5A28EAC7C100EA54BB /* SceneDelegate.swift */; };
 		5B95ED5D28EAC7C100EA54BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED5C28EAC7C100EA54BB /* ViewController.swift */; };
@@ -17,7 +18,6 @@
 		5B95ED7128EAD03A00EA54BB /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED7028EAD03A00EA54BB /* CryptoModel.swift */; };
 		5B95ED7328EAE0B900EA54BB /* JSONDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED7228EAE0B900EA54BB /* JSONDecode.swift */; };
 		5B95ED7528EB568C00EA54BB /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED7428EB568C00EA54BB /* File.swift */; };
-		5B95ED7A28ED589400EA54BB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B95ED7928ED589400EA54BB /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,18 +40,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B95ED7A28ED589400EA54BB /* Kingfisher in Frameworks */,
+				5B434C552907EF8E006AC4A6 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B2643F12907EE74003B3966 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5B95ED4C28EAC7C100EA54BB = {
 			isa = PBXGroup;
 			children = (
 				5B95ED5728EAC7C100EA54BB /* cryptoMonitoring */,
 				5B95ED5628EAC7C100EA54BB /* Products */,
+				5B2643F12907EE74003B3966 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +106,7 @@
 			);
 			name = cryptoMonitoring;
 			packageProductDependencies = (
-				5B95ED7928ED589400EA54BB /* Kingfisher */,
+				5B434C542907EF8E006AC4A6 /* Kingfisher */,
 			);
 			productName = cryptoMonitoring;
 			productReference = 5B95ED5528EAC7C100EA54BB /* cryptoMonitoring.app */;
@@ -397,7 +405,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B95ED7928ED589400EA54BB /* Kingfisher */ = {
+		5B434C542907EF8E006AC4A6 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5B95ED7828ED589400EA54BB /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
