@@ -7,32 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B434C552907EF8E006AC4A6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B434C542907EF8E006AC4A6 /* Kingfisher */; };
+		5B1E0F02294BBE59002430A0 /* CryptoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E0F01294BBE59002430A0 /* CryptoTableView.swift */; };
+		5B1E0F04294BBEA3002430A0 /* CryptoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E0F03294BBEA3002430A0 /* CryptoCell.swift */; };
+		5B1E0F0C294BC3C4002430A0 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E0F0B294BC3C4002430A0 /* CellViewModel.swift */; };
+		5B1E0F0E294BC4ED002430A0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E0F0D294BC4ED002430A0 /* UIView.swift */; };
+		5B1E0F10294BD25B002430A0 /* CustomIV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E0F0F294BD25B002430A0 /* CustomIV.swift */; };
+		5B1E0F19294C5CDE002430A0 /* CryptoTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E0F18294C5CDE002430A0 /* CryptoTableHeader.swift */; };
+		5B1E0F1B294C5F7B002430A0 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E0F1A294C5F7B002430A0 /* Resources.swift */; };
+		5B1E0F1D294C63EA002430A0 /* SelectorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E0F1C294C63EA002430A0 /* SelectorButton.swift */; };
 		5B95ED5928EAC7C100EA54BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED5828EAC7C100EA54BB /* AppDelegate.swift */; };
-		5B95ED5B28EAC7C100EA54BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED5A28EAC7C100EA54BB /* SceneDelegate.swift */; };
 		5B95ED5D28EAC7C100EA54BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED5C28EAC7C100EA54BB /* ViewController.swift */; };
-		5B95ED6028EAC7C100EA54BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B95ED5E28EAC7C100EA54BB /* Main.storyboard */; };
 		5B95ED6228EAC7C300EA54BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B95ED6128EAC7C300EA54BB /* Assets.xcassets */; };
 		5B95ED6528EAC7C300EA54BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B95ED6328EAC7C300EA54BB /* LaunchScreen.storyboard */; };
-		5B95ED6D28EAC8CE00EA54BB /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED6C28EAC8CE00EA54BB /* MyTableViewCell.swift */; };
 		5B95ED7128EAD03A00EA54BB /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED7028EAD03A00EA54BB /* CryptoModel.swift */; };
-		5B95ED7328EAE0B900EA54BB /* JSONDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED7228EAE0B900EA54BB /* JSONDecode.swift */; };
-		5B95ED7528EB568C00EA54BB /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED7428EB568C00EA54BB /* File.swift */; };
+		5B95ED7328EAE0B900EA54BB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED7228EAE0B900EA54BB /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B1E0F01294BBE59002430A0 /* CryptoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableView.swift; sourceTree = "<group>"; };
+		5B1E0F03294BBEA3002430A0 /* CryptoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCell.swift; sourceTree = "<group>"; };
+		5B1E0F0B294BC3C4002430A0 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		5B1E0F0D294BC4ED002430A0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		5B1E0F0F294BD25B002430A0 /* CustomIV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIV.swift; sourceTree = "<group>"; };
+		5B1E0F18294C5CDE002430A0 /* CryptoTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableHeader.swift; sourceTree = "<group>"; };
+		5B1E0F1A294C5F7B002430A0 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		5B1E0F1C294C63EA002430A0 /* SelectorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorButton.swift; sourceTree = "<group>"; };
 		5B95ED5528EAC7C100EA54BB /* cryptoMonitoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cryptoMonitoring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B95ED5828EAC7C100EA54BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B95ED5A28EAC7C100EA54BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5B95ED5C28EAC7C100EA54BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5B95ED5F28EAC7C100EA54BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B95ED6128EAC7C300EA54BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B95ED6428EAC7C300EA54BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B95ED6628EAC7C300EA54BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B95ED6C28EAC8CE00EA54BB /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		5B95ED7028EAD03A00EA54BB /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
-		5B95ED7228EAE0B900EA54BB /* JSONDecode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecode.swift; sourceTree = "<group>"; };
-		5B95ED7428EB568C00EA54BB /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		5B95ED7228EAE0B900EA54BB /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,18 +47,95 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B434C552907EF8E006AC4A6 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B1E0F05294BC37B002430A0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5B1E0F0D294BC4ED002430A0 /* UIView.swift */,
+				5B1E0F0F294BD25B002430A0 /* CustomIV.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5B1E0F0A294BC3B4002430A0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5B1E0F0B294BC3C4002430A0 /* CellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		5B2643F12907EE74003B3966 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B6CA12E294BB51D00678C69 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5B95ED5828EAC7C100EA54BB /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5B6CA12F294BB52700678C69 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5B95ED5C28EAC7C100EA54BB /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B6CA130294BB53200678C69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B1E0F01294BBE59002430A0 /* CryptoTableView.swift */,
+				5B1E0F03294BBEA3002430A0 /* CryptoCell.swift */,
+				5B1E0F18294C5CDE002430A0 /* CryptoTableHeader.swift */,
+				5B1E0F1C294C63EA002430A0 /* SelectorButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5B6CA131294BB53600678C69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B95ED7028EAD03A00EA54BB /* CryptoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B6CA132294BB54700678C69 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5B95ED7228EAE0B900EA54BB /* Network.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5B6CA133294BB57B00678C69 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				5B95ED6328EAC7C300EA54BB /* LaunchScreen.storyboard */,
+				5B95ED6628EAC7C300EA54BB /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		5B6CA134294BB58F00678C69 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5B95ED6128EAC7C300EA54BB /* Assets.xcassets */,
+				5B1E0F1A294C5F7B002430A0 /* Resources.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		5B95ED4C28EAC7C100EA54BB = {
@@ -74,17 +158,15 @@
 		5B95ED5728EAC7C100EA54BB /* cryptoMonitoring */ = {
 			isa = PBXGroup;
 			children = (
-				5B95ED5828EAC7C100EA54BB /* AppDelegate.swift */,
-				5B95ED5A28EAC7C100EA54BB /* SceneDelegate.swift */,
-				5B95ED5C28EAC7C100EA54BB /* ViewController.swift */,
-				5B95ED5E28EAC7C100EA54BB /* Main.storyboard */,
-				5B95ED6128EAC7C300EA54BB /* Assets.xcassets */,
-				5B95ED6328EAC7C300EA54BB /* LaunchScreen.storyboard */,
-				5B95ED6628EAC7C300EA54BB /* Info.plist */,
-				5B95ED6C28EAC8CE00EA54BB /* MyTableViewCell.swift */,
-				5B95ED7028EAD03A00EA54BB /* CryptoModel.swift */,
-				5B95ED7228EAE0B900EA54BB /* JSONDecode.swift */,
-				5B95ED7428EB568C00EA54BB /* File.swift */,
+				5B6CA12E294BB51D00678C69 /* Application */,
+				5B6CA131294BB53600678C69 /* Model */,
+				5B6CA130294BB53200678C69 /* View */,
+				5B1E0F0A294BC3B4002430A0 /* ViewModel */,
+				5B6CA12F294BB52700678C69 /* Controller */,
+				5B6CA132294BB54700678C69 /* Service */,
+				5B6CA134294BB58F00678C69 /* Resources */,
+				5B6CA133294BB57B00678C69 /* Supporting files */,
+				5B1E0F05294BC37B002430A0 /* Extension */,
 			);
 			path = cryptoMonitoring;
 			sourceTree = "<group>";
@@ -106,7 +188,6 @@
 			);
 			name = cryptoMonitoring;
 			packageProductDependencies = (
-				5B434C542907EF8E006AC4A6 /* Kingfisher */,
 			);
 			productName = cryptoMonitoring;
 			productReference = 5B95ED5528EAC7C100EA54BB /* cryptoMonitoring.app */;
@@ -137,7 +218,6 @@
 			);
 			mainGroup = 5B95ED4C28EAC7C100EA54BB;
 			packageReferences = (
-				5B95ED7828ED589400EA54BB /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 5B95ED5628EAC7C100EA54BB /* Products */;
 			projectDirPath = "";
@@ -155,7 +235,6 @@
 			files = (
 				5B95ED6528EAC7C300EA54BB /* LaunchScreen.storyboard in Resources */,
 				5B95ED6228EAC7C300EA54BB /* Assets.xcassets in Resources */,
-				5B95ED6028EAC7C100EA54BB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,27 +245,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B1E0F0E294BC4ED002430A0 /* UIView.swift in Sources */,
+				5B1E0F10294BD25B002430A0 /* CustomIV.swift in Sources */,
+				5B1E0F02294BBE59002430A0 /* CryptoTableView.swift in Sources */,
 				5B95ED7128EAD03A00EA54BB /* CryptoModel.swift in Sources */,
 				5B95ED5D28EAC7C100EA54BB /* ViewController.swift in Sources */,
-				5B95ED7528EB568C00EA54BB /* File.swift in Sources */,
-				5B95ED6D28EAC8CE00EA54BB /* MyTableViewCell.swift in Sources */,
+				5B1E0F0C294BC3C4002430A0 /* CellViewModel.swift in Sources */,
+				5B1E0F04294BBEA3002430A0 /* CryptoCell.swift in Sources */,
 				5B95ED5928EAC7C100EA54BB /* AppDelegate.swift in Sources */,
-				5B95ED5B28EAC7C100EA54BB /* SceneDelegate.swift in Sources */,
-				5B95ED7328EAE0B900EA54BB /* JSONDecode.swift in Sources */,
+				5B1E0F19294C5CDE002430A0 /* CryptoTableHeader.swift in Sources */,
+				5B1E0F1D294C63EA002430A0 /* SelectorButton.swift in Sources */,
+				5B1E0F1B294C5F7B002430A0 /* Resources.swift in Sources */,
+				5B95ED7328EAE0B900EA54BB /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5B95ED5E28EAC7C100EA54BB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B95ED5F28EAC7C100EA54BB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5B95ED6328EAC7C300EA54BB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -321,10 +397,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 88H5UYEH5N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = cryptoMonitoring/Info.plist;
+				INFOPLIST_FILE = "cryptoMonitoring/Supporting files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -350,10 +425,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 88H5UYEH5N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = cryptoMonitoring/Info.plist;
+				INFOPLIST_FILE = "cryptoMonitoring/Supporting files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -392,25 +466,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		5B95ED7828ED589400EA54BB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5B434C542907EF8E006AC4A6 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B95ED7828ED589400EA54BB /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5B95ED4D28EAC7C100EA54BB /* Project object */;
 }
