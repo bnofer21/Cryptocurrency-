@@ -10,7 +10,6 @@ import Foundation
 enum Resources {
     
     enum ShowCase {
-        case search
         case def
         case filter
     }

@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     var coins = [Coin]()
     var searchCoins = [Coin]()
     var filterCoins = [Coin]()
+    var isSearching = false
     var state = Resources.ShowCase.def
     let search = UISearchBar()
     
@@ -71,7 +72,9 @@ class ViewController: UIViewController {
         default:
             state = .filter
             filterCoins = coins.filter({ $0.moneyType == 1})
-            
+        }
+        if let text = search.text {
+            searchBar(search, textDidChange: text)
         }
         tableView.reloadData()
     }
@@ -82,25 +85,29 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch state {
-        case .def:
-            return coins.count
-        case .search:
+        if isSearching {
             return searchCoins.count
-        case .filter:
-            return filterCoins.count
+        } else {
+            switch state {
+            case .def:
+                return coins.count
+            case .filter:
+                return filterCoins.count
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CryptoCell.id, for: indexPath) as? CryptoCell else { return UITableViewCell() }
-        switch state {
-        case .def:
-            cell.viewModel = CellViewModel(coin: coins[indexPath.row])
-        case .search:
+        if isSearching {
             cell.viewModel = CellViewModel(coin: searchCoins[indexPath.row])
-        case .filter:
-            cell.viewModel = CellViewModel(coin: filterCoins[indexPath.row])
+        } else {
+            switch state {
+            case .def:
+                cell.viewModel = CellViewModel(coin: coins[indexPath.row])
+            case .filter:
+                cell.viewModel = CellViewModel(coin: filterCoins[indexPath.row])
+            }
         }
         return cell
     }
@@ -131,17 +138,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 extension ViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.isEmpty {
-            tableView.reloadData()
-        } else {
+        if !searchText.isEmpty {
+            isSearching = true
             if state == .filter {
                 searchCoins = filterCoins.filter({ $0.ticker.contains(searchText) || $0.fullName.contains(searchText)})
             } else {
                 searchCoins = coins.filter({ $0.ticker.contains(searchText) || $0.fullName.contains(searchText)})
             }
-            state = .search
-            tableView.reloadData()
+        } else {
+            isSearching = false
         }
+            tableView.reloadData()
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -149,8 +156,6 @@ extension ViewController: UISearchBarDelegate {
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        state = .def
-        tableView.reloadData()
         showCancel(false)
     }
 
