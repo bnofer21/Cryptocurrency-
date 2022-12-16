@@ -1,7 +1,7 @@
 # Cryptocurrency
 UIKit app with a list of cryptocurrencies 
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/58361435/208108017-eb8abb52-0c56-4192-9e91-4e90cdafd7bf.gif)
+![ezgif com-gif-maker-2](https://user-images.githubusercontent.com/58361435/208110774-f38946d3-0b6c-48d9-b296-b2ad212367e2.gif)
 
 # Main stack
 UIKit, Navigation Controller, URLSession, GCD
