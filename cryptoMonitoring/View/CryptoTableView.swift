@@ -9,7 +9,7 @@ import UIKit
 
 class CryptoTableView: UITableView {
     
-    var cancelButton: UIButton = {
+    private var cancelButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Cancel", for: .normal)
         return button
@@ -17,7 +17,7 @@ class CryptoTableView: UITableView {
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
-        register(CryptoCell.self, forCellReuseIdentifier: CryptoCell.id)
+        register(CryptoBaseInfoCell.self, forCellReuseIdentifier: "CryptoBaseInfoCell")
         register(CryptoTableHeader.self, forHeaderFooterViewReuseIdentifier: CryptoTableHeader.id)
         sectionHeaderTopPadding = 0
     }

@@ -80,9 +80,9 @@ final class CryptoTableHeader: UITableViewHeaderFooterView {
         sender.isSelected.toggle()
         let x = sender.frame.minX
         let y = sender.frame.origin.y
-        UIView.animate(withDuration: 0.2) { [self] in
-            animatedSelector.transform = CGAffineTransform(translationX: x, y: y)
-        }
+//        UIView.animate(withDuration: 0.2) { [weak self] in
+//            animatedSelector.transform = CGAffineTransform(translationX: x, y: y)
+//        }
     }
     
 }

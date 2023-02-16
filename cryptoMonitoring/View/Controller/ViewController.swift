@@ -37,25 +37,25 @@ final class ViewController: UIViewController {
         search.delegate = self
     }
     
-    func showCancel(_ bool: Bool) {
-        if bool {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(customView: tableView.cancelButton)
-        } else {
-            navigationItem.rightBarButtonItem = nil
-        }
-    }
+//    func showCancel(_ bool: Bool) {
+//        if bool {
+//            navigationItem.rightBarButtonItem = UIBarButtonItem(customView: tableView.cancelButton)
+//        } else {
+//            navigationItem.rightBarButtonItem = nil
+//        }
+//    }
     
     private func setTargets() {
         tableView.setTarget(target: self, action: #selector(dismissKeyboard))
     }
     
     private func fetchCoins() {
-        Network.shared.getData { coins in
-            self.coins = coins
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+//        Network.shared.getData { coins in
+//            self.coins = coins
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        }
     }
     
     @objc func dismissKeyboard() {
@@ -151,12 +151,12 @@ extension ViewController: UISearchBarDelegate {
             tableView.reloadData()
     }
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        showCancel(true)
-    }
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        showCancel(false)
-    }
+//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+//        showCancel(true)
+//    }
+//    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+//        showCancel(false)
+//    }
 
 }
 

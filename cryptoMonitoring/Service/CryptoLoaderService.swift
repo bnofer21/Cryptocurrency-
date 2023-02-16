@@ -7,38 +7,31 @@
 
 import Foundation
 
-struct Network {
+class CryptoLoaderService: CryptoLoaderInterface {
     
-    static let shared = Network()
-    
-    func getData(completion: @escaping([Coin])->Void) {
+    func loadCrypto(completion: @escaping ([Coin]?, String?) -> Void) {
         let urlString = "https://rest.coinapi.io/v1/assets?apikey=DE69ED22-17F3-46ED-83E2-8196394EBCFA"
         let url = URL(string: urlString)
         guard let url = url else { return }
             URLSession.shared.dataTask(with: url) {data, response, error in
                 if let error = error {
-                    print(error)
+                    completion(nil, error.localizedDescription)
                     return
                 }
-                guard let data = data else { return }
+                guard let data = data else {
+                    completion(nil, "Error: No data found")
+                    return
+                }
                 do {
                     let decoder = JSONDecoder()
                     let results = try decoder.decode([Coin].self, from: data)
-                    completion(results)
+                    completion(results, nil)
                 } catch {
-                    print(error)
+                    completion(nil, error.localizedDescription)
                 }
             }.resume()
     }
     
-    func getImageUrl(id: String) -> URL {
-        var urlString = "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/"
-        let editId = id.replacingOccurrences(of: "-", with: "")
-        urlString.append(editId)
-        urlString.append(".png")
-        let url = URL(string: urlString)
-        return url!
-    }
 }
 
 
