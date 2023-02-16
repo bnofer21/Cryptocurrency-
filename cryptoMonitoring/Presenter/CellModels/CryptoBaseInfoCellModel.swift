@@ -12,23 +12,32 @@ class CryptoBaseInfoCellModel: CryptoBaseCellModel {
         return "CryptoBaseInfoCell"
     }
     
-    var ticker: String
-    var fullName: String
-    var price: Double?
-    var moneyType: Int
-    var iconUrl: String?
+    var coin: Coin
     
-    init(_ coin: Coin) {
-        ticker = coin.ticker
-        fullName = coin.fullName
-        price = coin.price
-        moneyType = coin.moneyType
-        super.init()
-        iconUrl = urlFromId(coin.idIcon)
+    var ticker: String {
+        return coin.ticker
     }
-    
-    private func urlFromId(_ id: String?) -> String {
-        guard let id = id else { return "" }
+    var fullName: String {
+        return coin.fullName
+    }
+    var price: String? {
+        guard let price = coin.price else { return "" }
+        var result = String(price)
+        if price < 10 {
+            result = String(format: "%.4f", price)
+        } else if price > 10, price < 1000 {
+            result = String(format: "%.2f", price)
+        } else {
+            result = String(format: "%.0f", price)
+        }
+        result.append(" $")
+        return result
+    }
+    var moneyType: Int {
+        return coin.moneyType
+    }
+    var iconUrl: String? {
+        guard let id = coin.idIcon else { return "" }
         var urlString = "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/"
         let editId = id.replacingOccurrences(of: "-", with: "")
         urlString.append(editId)
@@ -36,5 +45,8 @@ class CryptoBaseInfoCellModel: CryptoBaseCellModel {
         return urlString
     }
     
+    init(_ coin: Coin) {
+        self.coin = coin
+    }
     
 }
