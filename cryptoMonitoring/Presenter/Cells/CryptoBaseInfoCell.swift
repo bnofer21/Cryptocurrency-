@@ -58,9 +58,7 @@ class CryptoBaseInfoCell: CryptoBaseCell {
         if let price = model.price {
             priceLabel.text = "\(price)"
         }
-        if let id = model.idIcon {
-            icon.loadImage(idIcon: id)
-        }
+        icon.loadImage(urlStr: model.iconUrl ?? "")
         fullNameLabel.text = model.fullName
         tickerLabel.text = model.ticker
     }

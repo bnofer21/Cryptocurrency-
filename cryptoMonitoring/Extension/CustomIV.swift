@@ -9,36 +9,29 @@ import UIKit
 let imageCache = NSCache<NSString, UIImage>()
 
 class CustomIV: UIImageView {
-    var idIconStored: String?
-    func loadImage(idIcon: String) {
-        idIconStored = idIcon
+    var imageUrl: String?
+    func loadImage(urlStr: String) {
+        imageUrl = urlStr
         image = UIImage(named: "noImage")
-        if let img = imageCache.object(forKey: NSString(string: idIconStored!)) {
+        if let img = imageCache.object(forKey: NSString(string: imageUrl!)) {
             image = img
             return
         }
-        guard let url = URL(string: makeIconUrl(idIcon)) else { return }
-        idIconStored = idIcon
+        guard let url = URL(string: urlStr) else {return}
+        imageUrl = urlStr
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let err = error {
-                print(err.localizedDescription)
+                print(err)
             } else {
                 DispatchQueue.main.async {
                     let tempImg = UIImage(data: data!)
-                    if self.idIconStored == idIcon {
+                    if self.imageUrl == urlStr {
                         self.image = tempImg
                     }
-                    imageCache.setObject(tempImg!, forKey: NSString(string: idIcon))
+                    imageCache.setObject(tempImg!, forKey: NSString(string: urlStr))
                 }
             }
         }.resume()
     }
     
-    private func makeIconUrl(_ idIcon: String) -> String {
-        var urlString = "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/"
-        let editId = idIcon.replacingOccurrences(of: "-", with: "")
-        urlString.append(editId)
-        urlString.append(".png")
-        return urlString
-    }
 }
