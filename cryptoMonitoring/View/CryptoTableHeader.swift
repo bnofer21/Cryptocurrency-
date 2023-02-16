@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CryptoTableHeader: UITableViewHeaderFooterView {
+final class CryptoTableHeader: UITableViewHeaderFooterView {
     
     static let id = "CryptoTableHeader"
     

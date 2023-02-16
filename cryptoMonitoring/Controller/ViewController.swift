@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     var tableView = CryptoTableView()
     
@@ -154,7 +154,6 @@ extension ViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         showCancel(true)
     }
-    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         showCancel(false)
     }
