@@ -7,7 +7,11 @@
 
 import Foundation
 
-class CryptoLoaderService: CryptoLoaderInterface {
+protocol CryptoLoaderInterface {
+    func loadCrypto(completion: @escaping ([Coin]?, String?) -> Void)
+}
+
+final class CryptoLoaderService: CryptoLoaderInterface {
     
     func loadCrypto(completion: @escaping ([Coin]?, String?) -> Void) {
         let urlString = "https://rest.coinapi.io/v1/assets?apikey=DE69ED22-17F3-46ED-83E2-8196394EBCFA"

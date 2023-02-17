@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CryptoConfigurator {
+final class CryptoConfigurator {
     
     func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
         

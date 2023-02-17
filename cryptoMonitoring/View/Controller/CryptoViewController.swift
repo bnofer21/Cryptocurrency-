@@ -17,7 +17,7 @@ protocol CryptoViewOutput {
     func searchCoin(searchText: String, moneyType: Resources.SelectButtons)
 }
 
-class CryptoViewController: UIViewController, CryptoViewInput {
+final class CryptoViewController: UIViewController, CryptoViewInput {
     
     var output: CryptoViewOutput?
     var cryptoSection: CryptoSectionModel?

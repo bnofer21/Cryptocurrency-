@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CryptoBaseInfoCellModel: CryptoBaseCellModel {
+final class CryptoBaseInfoCellModel: CryptoBaseCellModel {
     override var cellIdentifier: String {
         return "CryptoBaseInfoCell"
     }

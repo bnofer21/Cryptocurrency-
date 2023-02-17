@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CryptoTableView: UITableView {
+final class CryptoTableView: UITableView {
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)

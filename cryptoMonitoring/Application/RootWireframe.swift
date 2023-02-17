@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RootWireframe {
+final class RootWireframe {
     
     class func setupWith(_ window: UIWindow) {
         let vc = CryptoViewController()

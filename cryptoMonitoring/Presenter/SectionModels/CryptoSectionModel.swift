@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CryptoSectionModel: SectionRowsRepresentable {
+final class CryptoSectionModel: SectionRowsRepresentable {
     var rows: [CellIdentifiable]
     
     init(_ coins: [Coin]) {
