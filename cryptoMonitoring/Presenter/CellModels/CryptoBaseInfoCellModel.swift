@@ -1,36 +1,42 @@
 //
-//  CellViewModel.swift
+//  CryptoBaseInfoCellModel.swift
 //  cryptoMonitoring
 //
-//  Created by Юрий on 16.12.2022.
+//  Created by Юрий on 16.02.2023.
 //
 
 import Foundation
 
-struct CellViewModel {
+final class CryptoBaseInfoCellModel: CryptoBaseCellModel {
+    override var cellIdentifier: String {
+        return "CryptoBaseInfoCell"
+    }
     
     var coin: Coin
     
     var ticker: String {
         return coin.ticker
     }
-    
     var fullName: String {
         return coin.fullName
     }
-    
-    var price: String {
+    var price: String? {
         guard let price = coin.price else { return "" }
-        var result = String(format: "%.4f", price)
-        result.append("$")
+        var result = String(price)
+        if price < 10 {
+            result = String(format: "%.4f", price)
+        } else if price > 10, price < 1000 {
+            result = String(format: "%.2f", price)
+        } else {
+            result = String(format: "%.0f", price)
+        }
+        result.append(" $")
         return result
     }
-    
-    var type: Int {
+    var moneyType: Int {
         return coin.moneyType
     }
-    
-    var iconUrl: String {
+    var iconUrl: String? {
         guard let id = coin.idIcon else { return "" }
         var urlString = "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/"
         let editId = id.replacingOccurrences(of: "-", with: "")
@@ -39,7 +45,8 @@ struct CellViewModel {
         return urlString
     }
     
-    init(coin: Coin) {
+    init(_ coin: Coin) {
         self.coin = coin
     }
+    
 }

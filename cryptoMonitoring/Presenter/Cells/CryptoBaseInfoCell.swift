@@ -1,21 +1,13 @@
 //
-//  CryptoCell.swift
+//  CryptoBaseInfoCell.swift
 //  cryptoMonitoring
 //
-//  Created by Юрий on 15.12.2022.
+//  Created by Юрий on 16.02.2023.
 //
 
 import UIKit
 
-class CryptoCell: UITableViewCell {
-    
-    static let id = "CryptoCell"
-    
-    var viewModel: CellViewModel? {
-        didSet {
-            configure()
-        }
-    }
+class CryptoBaseInfoCell: CryptoBaseCell {
     
     var icon: CustomIV = {
         let icon = CustomIV()
@@ -61,16 +53,19 @@ class CryptoCell: UITableViewCell {
         addView(view: priceLabel)
     }
     
-    private func configure() {
-        guard let viewModel = viewModel else { return }
-        icon.loadImage(urlStr: viewModel.iconUrl)
-        fullNameLabel.text = viewModel.fullName
-        tickerLabel.text = viewModel.ticker
-        priceLabel.text = "\(viewModel.price)"
+    override func updateViews() {
+        guard let model = model as? CryptoBaseInfoCellModel else { return }
+        if let price = model.price {
+            priceLabel.text = "\(price)"
+        }
+        icon.loadImage(urlStr: model.iconUrl ?? "")
+        fullNameLabel.text = model.fullName
+        tickerLabel.text = model.ticker
     }
+
 }
 
-extension CryptoCell {
+extension CryptoBaseInfoCell {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([

@@ -7,13 +7,9 @@
 
 import UIKit
 
-class SelectorButton: UIButton {
+final class SelectorButton: UIButton {
     
-//    override var isSelected: Bool {
-//        didSet {
-//            isSelected ? setTitleColor(.systemBlue, for: .normal) : setTitleColor(.gray, for: .normal)
-//        }
-//    }
+    var moneyType: Resources.SelectButtons?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

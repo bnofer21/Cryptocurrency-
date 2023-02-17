@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CryptoTableHeader: UITableViewHeaderFooterView {
+final class CryptoTableHeader: UITableViewHeaderFooterView {
     
     static let id = "CryptoTableHeader"
     
@@ -53,6 +53,7 @@ class CryptoTableHeader: UITableViewHeaderFooterView {
             if i == 0 {
                 button.isSelected = true
             }
+            button.moneyType = Resources.SelectButtons.allCases[i]
             button.setTitle(Resources.SelectButtons.allCases[i].rawValue, for: .normal)
             button.addTarget(self, action: #selector(selectItem(sender:)), for: .touchUpInside)
             buttons.append(button)
@@ -66,7 +67,7 @@ class CryptoTableHeader: UITableViewHeaderFooterView {
     }
     
     private func createSelector(sender: SelectorButton) {
-        animatedSelector.frame = CGRect(x: sender.frame.minX, y: sender.frame.origin.y, width: sender.frame.width, height: 4)
+        animatedSelector.frame = CGRect(x: sender.frame.minX, y: sender.frame.minY, width: sender.frame.width, height: 4)
         animatedSelector.backgroundColor = .systemBlue
         self.addSubview(animatedSelector)
     }
@@ -80,8 +81,8 @@ class CryptoTableHeader: UITableViewHeaderFooterView {
         sender.isSelected.toggle()
         let x = sender.frame.minX
         let y = sender.frame.origin.y
-        UIView.animate(withDuration: 0.2) { [self] in
-            animatedSelector.transform = CGAffineTransform(translationX: x, y: y)
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.animatedSelector.transform = CGAffineTransform(translationX: x, y: y)
         }
     }
     

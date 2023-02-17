@@ -8,7 +8,7 @@ import UIKit
 
 let imageCache = NSCache<NSString, UIImage>()
 
-class CustomIV: UIImageView {
+final class CustomIV: UIImageView {
     var imageUrl: String?
     func loadImage(urlStr: String) {
         imageUrl = urlStr
@@ -33,4 +33,5 @@ class CustomIV: UIImageView {
             }
         }.resume()
     }
+    
 }
