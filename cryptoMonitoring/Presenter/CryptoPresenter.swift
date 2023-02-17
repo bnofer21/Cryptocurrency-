@@ -30,5 +30,9 @@ final class CryptoPresenter: CryptoPresenterInput, CryptoViewOutput, CryptoInter
     func didReceive(error: String) {
         print(error)
     }
+    
+    func filterChanged(showType: Resources.SelectButtons) {
+        interactor?.filterArray(moneyType: showType)
+    }
 }
 

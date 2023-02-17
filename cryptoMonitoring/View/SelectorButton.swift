@@ -9,6 +9,8 @@ import UIKit
 
 final class SelectorButton: UIButton {
     
+    var moneyType: Resources.SelectButtons?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()

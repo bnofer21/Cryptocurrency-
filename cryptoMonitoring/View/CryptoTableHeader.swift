@@ -53,6 +53,7 @@ final class CryptoTableHeader: UITableViewHeaderFooterView {
             if i == 0 {
                 button.isSelected = true
             }
+            button.moneyType = Resources.SelectButtons.allCases[i]
             button.setTitle(Resources.SelectButtons.allCases[i].rawValue, for: .normal)
             button.addTarget(self, action: #selector(selectItem(sender:)), for: .touchUpInside)
             buttons.append(button)
@@ -80,9 +81,9 @@ final class CryptoTableHeader: UITableViewHeaderFooterView {
         sender.isSelected.toggle()
         let x = sender.frame.minX
         let y = sender.frame.origin.y
-//        UIView.animate(withDuration: 0.2) { [weak self] in
-//            animatedSelector.transform = CGAffineTransform(translationX: x, y: y)
-//        }
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.animatedSelector.transform = CGAffineTransform(translationX: x, y: y)
+        }
     }
     
 }

@@ -13,6 +13,7 @@ protocol CryptoViewInput: AnyObject {
 
 protocol CryptoViewOutput {
     func viewDidLoad()
+    func filterChanged(showType: Resources.SelectButtons)
 }
 
 class CryptoViewController: UIViewController, CryptoViewInput {
@@ -45,6 +46,11 @@ class CryptoViewController: UIViewController, CryptoViewInput {
         cryptoView.dataSource = self
     }
     
+    @objc func filterCoins(sender: SelectorButton) {
+        guard let type = sender.moneyType else { return }
+        output?.filterChanged(showType: type)
+    }
+    
 }
 
 extension CryptoViewController: UITableViewDataSource, UITableViewDelegate {
@@ -61,7 +67,20 @@ extension CryptoViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: CryptoTableHeader.id) as? CryptoTableHeader else { return UIView() }
+        header.clipsToBounds = true
+        for button in header.buttons {
+            button.addTarget(self, action: #selector(filterCoins(sender:)), for: .touchUpInside)
+        }
+        return header
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        50
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
     }
     
