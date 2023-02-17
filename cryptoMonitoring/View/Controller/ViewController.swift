@@ -46,7 +46,7 @@ final class ViewController: UIViewController {
 //    }
     
     private func setTargets() {
-        tableView.setTarget(target: self, action: #selector(dismissKeyboard))
+//        tableView.setTarget(target: self, action: #selector(dismissKeyboard))
     }
     
     private func fetchCoins() {

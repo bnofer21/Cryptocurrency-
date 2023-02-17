@@ -67,7 +67,7 @@ final class CryptoTableHeader: UITableViewHeaderFooterView {
     }
     
     private func createSelector(sender: SelectorButton) {
-        animatedSelector.frame = CGRect(x: sender.frame.minX, y: sender.frame.origin.y, width: sender.frame.width, height: 4)
+        animatedSelector.frame = CGRect(x: sender.frame.minX, y: sender.frame.minY, width: sender.frame.width, height: 4)
         animatedSelector.backgroundColor = .systemBlue
         self.addSubview(animatedSelector)
     }

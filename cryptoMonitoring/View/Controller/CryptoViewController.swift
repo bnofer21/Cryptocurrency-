@@ -14,14 +14,26 @@ protocol CryptoViewInput: AnyObject {
 protocol CryptoViewOutput {
     func viewDidLoad()
     func filterChanged(showType: Resources.SelectButtons)
+    func searchCoin(searchText: String, moneyType: Resources.SelectButtons)
 }
 
 class CryptoViewController: UIViewController, CryptoViewInput {
     
     var output: CryptoViewOutput?
-    
     var cryptoSection: CryptoSectionModel?
+    
     var cryptoView = CryptoTableView()
+    let searchBar = UISearchBar()
+    
+    var isSearching = false
+    var selectedType = Resources.SelectButtons.all
+    var state = Resources.ShowCase.def
+    
+    private var cancelButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Cancel", for: .normal)
+        return button
+    }()
     
     override func loadView() {
         view = cryptoView
@@ -30,7 +42,7 @@ class CryptoViewController: UIViewController, CryptoViewInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        print(output == nil)
+        setTargets()
         output?.viewDidLoad()
     }
     
@@ -44,11 +56,30 @@ class CryptoViewController: UIViewController, CryptoViewInput {
     private func setupView() {
         cryptoView.delegate = self
         cryptoView.dataSource = self
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
+    }
+    
+    private func showCancel(_ bool: Bool) {
+        if bool {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(customView: cancelButton)
+        } else {
+            navigationItem.rightBarButtonItem = nil
+        }
+    }
+    
+    private func setTargets() {
+        cancelButton.addTarget(self, action: #selector(dismissKeyboard), for: .touchUpInside)
     }
     
     @objc func filterCoins(sender: SelectorButton) {
         guard let type = sender.moneyType else { return }
+        selectedType = type
         output?.filterChanged(showType: type)
+    }
+    
+    @objc func dismissKeyboard() {
+        searchBar.endEditing(true)
     }
     
 }
@@ -89,4 +120,23 @@ extension CryptoViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     
+}
+
+extension CryptoViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if !searchText.isEmpty {
+            isSearching = true
+            output?.searchCoin(searchText: searchText, moneyType: selectedType)
+        } else {
+            isSearching = false
+        }
+        
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        showCancel(true)
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        showCancel(false)
+    }
 }

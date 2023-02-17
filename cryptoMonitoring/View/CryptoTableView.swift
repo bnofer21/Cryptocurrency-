@@ -9,12 +9,6 @@ import UIKit
 
 class CryptoTableView: UITableView {
     
-    private var cancelButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Cancel", for: .normal)
-        return button
-    }()
-    
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         register(CryptoBaseInfoCell.self, forCellReuseIdentifier: "CryptoBaseInfoCell")
@@ -26,7 +20,4 @@ class CryptoTableView: UITableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func setTarget(target: Any?, action: Selector) {
-        cancelButton.addTarget(target, action: action, for: .touchUpInside)
-    }
 }

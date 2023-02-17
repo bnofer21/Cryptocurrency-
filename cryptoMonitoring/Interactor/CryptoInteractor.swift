@@ -10,7 +10,8 @@ import Foundation
 protocol CryptoInteractorInput {
     var output: CryptoInteractorOutput? { get set }
     func loadCrypto()
-    func filterArray(moneyType: Resources.SelectButtons)
+    func returnFilterArray(moneyType: Resources.SelectButtons)
+    func searchCoin(searchText: String, type: Resources.SelectButtons)
 }
 
 protocol CryptoInteractorOutput: AnyObject {
@@ -36,9 +37,20 @@ final class CryptoInteractor: CryptoInteractorInput {
         }
     }
     
-    func filterArray(moneyType: Resources.SelectButtons) {
+    func returnFilterArray(moneyType: Resources.SelectButtons) {
+        let filtered = filterArray(type: moneyType)
+        self.output?.didLoadCrypto(filtered)
+    }
+    
+    func searchCoin(searchText: String, type: Resources.SelectButtons) {
+        var filtered = filterArray(type: type)
+        filtered = filtered.filter({ $0.ticker.contains(searchText) || $0.fullName.contains(searchText)})
+        self.output?.didLoadCrypto(filtered)
+    }
+    
+    private func filterArray(type: Resources.SelectButtons) -> [Coin] {
         var filteredArray = [Coin]()
-        switch moneyType {
+        switch type {
         case Resources.SelectButtons.all:
             filteredArray = defaultArray
         case Resources.SelectButtons.fiat:
@@ -46,6 +58,6 @@ final class CryptoInteractor: CryptoInteractorInput {
         default:
             filteredArray = defaultArray.filter({ $0.moneyType == 1})
         }
-        self.output?.didLoadCrypto(filteredArray)
+        return filteredArray
     }
 }

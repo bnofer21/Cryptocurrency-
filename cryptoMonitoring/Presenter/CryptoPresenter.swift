@@ -32,7 +32,11 @@ final class CryptoPresenter: CryptoPresenterInput, CryptoViewOutput, CryptoInter
     }
     
     func filterChanged(showType: Resources.SelectButtons) {
-        interactor?.filterArray(moneyType: showType)
+        interactor?.returnFilterArray(moneyType: showType)
+    }
+    
+    func searchCoin(searchText: String, moneyType: Resources.SelectButtons) {
+        interactor?.searchCoin(searchText: searchText, type: moneyType)
     }
 }
 
