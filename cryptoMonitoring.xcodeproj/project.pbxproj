@@ -26,6 +26,8 @@
 		5B795CFB299E382600A9E96D /* CryptoSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B795CFA299E382600A9E96D /* CryptoSectionModel.swift */; };
 		5B795CFD299E523400A9E96D /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B795CFC299E523400A9E96D /* RootWireframe.swift */; };
 		5B795D02299E536500A9E96D /* CryptoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B795D01299E536500A9E96D /* CryptoConfigurator.swift */; };
+		5B795D0629A0C88800A9E96D /* CryptoBaseLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B795D0529A0C88800A9E96D /* CryptoBaseLoadingCell.swift */; };
+		5B795D0829A0C90000A9E96D /* CryptoBaseLoadingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B795D0729A0C90000A9E96D /* CryptoBaseLoadingCellModel.swift */; };
 		5B95ED5928EAC7C100EA54BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95ED5828EAC7C100EA54BB /* AppDelegate.swift */; };
 		5B95ED6228EAC7C300EA54BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B95ED6128EAC7C300EA54BB /* Assets.xcassets */; };
 		5B95ED6528EAC7C300EA54BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B95ED6328EAC7C300EA54BB /* LaunchScreen.storyboard */; };
@@ -53,6 +55,8 @@
 		5B795CFA299E382600A9E96D /* CryptoSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSectionModel.swift; sourceTree = "<group>"; };
 		5B795CFC299E523400A9E96D /* RootWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
 		5B795D01299E536500A9E96D /* CryptoConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoConfigurator.swift; sourceTree = "<group>"; };
+		5B795D0529A0C88800A9E96D /* CryptoBaseLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoBaseLoadingCell.swift; sourceTree = "<group>"; };
+		5B795D0729A0C90000A9E96D /* CryptoBaseLoadingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoBaseLoadingCellModel.swift; sourceTree = "<group>"; };
 		5B95ED5528EAC7C100EA54BB /* cryptoMonitoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cryptoMonitoring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B95ED5828EAC7C100EA54BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B95ED6128EAC7C300EA54BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 			children = (
 				5B795CF0299E2D4F00A9E96D /* CryptoBaseCellModel.swift */,
 				5B795CF2299E2DC400A9E96D /* CryptoBaseInfoCellModel.swift */,
+				5B795D0729A0C90000A9E96D /* CryptoBaseLoadingCellModel.swift */,
 			);
 			path = CellModels;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			children = (
 				5B795CF5299E2EFA00A9E96D /* CryptoBaseCell.swift */,
 				5B795CF7299E2F4800A9E96D /* CryptoBaseInfoCell.swift */,
+				5B795D0529A0C88800A9E96D /* CryptoBaseLoadingCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 				5B1E0F0E294BC4ED002430A0 /* UIView.swift in Sources */,
 				5B795CF1299E2D4F00A9E96D /* CryptoBaseCellModel.swift in Sources */,
 				5B795D02299E536500A9E96D /* CryptoConfigurator.swift in Sources */,
+				5B795D0629A0C88800A9E96D /* CryptoBaseLoadingCell.swift in Sources */,
 				5B1E0F10294BD25B002430A0 /* CustomIV.swift in Sources */,
 				5B795CEA299E2C7500A9E96D /* CellIdentifiable.swift in Sources */,
 				5B1E0F02294BBE59002430A0 /* CryptoTableView.swift in Sources */,
@@ -334,6 +341,7 @@
 				5B795CEE299E2CFF00A9E96D /* SectionRowsRepresentable.swift in Sources */,
 				5B95ED5928EAC7C100EA54BB /* AppDelegate.swift in Sources */,
 				5B795CFB299E382600A9E96D /* CryptoSectionModel.swift in Sources */,
+				5B795D0829A0C90000A9E96D /* CryptoBaseLoadingCellModel.swift in Sources */,
 				5B1E0F19294C5CDE002430A0 /* CryptoTableHeader.swift in Sources */,
 				5B1E0F1D294C63EA002430A0 /* SelectorButton.swift in Sources */,
 				5B1E0F1B294C5F7B002430A0 /* Resources.swift in Sources */,

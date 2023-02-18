@@ -18,7 +18,6 @@ final class CryptoPresenter: CryptoPresenterInput, CryptoViewOutput, CryptoInter
 //  (not used)  var router: CryptoRouterInput?
     
     func viewDidLoad() {
-        print("request")
         interactor?.loadCrypto()
     }
     

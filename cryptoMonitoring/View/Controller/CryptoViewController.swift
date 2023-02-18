@@ -27,6 +27,13 @@ final class CryptoViewController: UIViewController, CryptoViewInput {
     let searchBar = UISearchBar()
     
     var isSearching = false
+    var isLoading = true {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.cryptoView.reloadData()
+            }
+        }
+    }
     var selectedType = Resources.SelectButtons.all
     var state = Resources.ShowCase.def
     
@@ -55,7 +62,8 @@ final class CryptoViewController: UIViewController, CryptoViewInput {
     }
     
     func showError(error: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
+        isLoading = false
+        DispatchQueue.main.async{ [weak self] in
             let alert = UIAlertController()
             alert.title = "Error"
             alert.message = error
@@ -86,7 +94,7 @@ final class CryptoViewController: UIViewController, CryptoViewInput {
     }
     
     @objc func filterCoins(sender: SelectorButton) {
-        guard let type = sender.moneyType else { return }
+        guard let type = sender.moneyType, isLoading == true else { return }
         selectedType = type
         output?.filterChanged(showType: type)
     }
@@ -100,15 +108,22 @@ final class CryptoViewController: UIViewController, CryptoViewInput {
 extension CryptoViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cryptoSection?.rows.count ?? 0
+        guard let cryptoSection = cryptoSection else { return 1 }
+        return cryptoSection.rows.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = cryptoSection?.rows[indexPath.row]
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: model!.cellIdentifier, for: indexPath) as? CryptoBaseCell else { return UITableViewCell()}
-        cell.model = model
-        
-        return cell
+        if let cryptoSection = cryptoSection {
+            let model = cryptoSection.rows[indexPath.row]
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: model.cellIdentifier, for: indexPath) as? CryptoBaseCell else { return UITableViewCell()}
+            cell.model = model
+            return cell
+        } else {
+            let model = CryptoBaseLoadingCellModel(isLoading: isLoading)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: model.cellIdentifier, for: indexPath) as? CryptoBaseCell else { return UITableViewCell() }
+            cell.model = model
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -125,11 +140,18 @@ extension CryptoViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        50
+        cryptoSection != nil ? 50 : 0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        if cryptoSection != nil {
+            tableView.deselectRow(at: indexPath, animated: true)
+        } else {
+            isLoading.toggle()
+            cryptoView.reloadData()
+            output?.viewDidLoad()
+        }
+        
     }
     
     
