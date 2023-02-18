@@ -12,6 +12,7 @@ final class CryptoTableView: UITableView {
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         register(CryptoBaseInfoCell.self, forCellReuseIdentifier: "CryptoBaseInfoCell")
+        register(CryptoBaseLoadingCell.self, forCellReuseIdentifier: "CryptoBaseLoadingCell")
         register(CryptoTableHeader.self, forHeaderFooterViewReuseIdentifier: CryptoTableHeader.id)
         sectionHeaderTopPadding = 0
     }

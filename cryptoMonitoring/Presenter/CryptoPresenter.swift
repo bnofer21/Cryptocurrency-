@@ -18,7 +18,6 @@ final class CryptoPresenter: CryptoPresenterInput, CryptoViewOutput, CryptoInter
 //  (not used)  var router: CryptoRouterInput?
     
     func viewDidLoad() {
-        print("request")
         interactor?.loadCrypto()
     }
     
@@ -28,7 +27,7 @@ final class CryptoPresenter: CryptoPresenterInput, CryptoViewOutput, CryptoInter
     }
     
     func didReceive(error: String) {
-        print(error)
+        view?.showError(error: error)
     }
     
     func filterChanged(showType: Resources.SelectButtons) {
