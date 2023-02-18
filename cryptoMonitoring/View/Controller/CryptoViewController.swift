@@ -9,6 +9,7 @@ import UIKit
 
 protocol CryptoViewInput: AnyObject {
     func updateForSection(_ section: CryptoSectionModel)
+    func showError(error: String)
 }
 
 protocol CryptoViewOutput {
@@ -50,6 +51,18 @@ final class CryptoViewController: UIViewController, CryptoViewInput {
         self.cryptoSection = section
         DispatchQueue.main.async {
             self.cryptoView.reloadData()
+        }
+    }
+    
+    func showError(error: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
+            let alert = UIAlertController()
+            alert.title = "Error"
+            alert.message = error
+            
+            let ok = UIAlertAction(title: "Ok", style: .cancel)
+            alert.addAction(ok)
+            self?.present(alert, animated: true)
         }
     }
     
