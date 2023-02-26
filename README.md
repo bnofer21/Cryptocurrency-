@@ -9,7 +9,7 @@ UIKit, Navigation Controller, URLSession, GCD
 # Short description
 
 1) The project is written on UIKit without using storyboard builder
-2) Architectural pattern: MVVM
+2) Architectural pattern: VIPER-C
 3) The main view is Table View
 4) Table view uses custom cell
 5) The app has Networking class that fetches data from CoinAPI
