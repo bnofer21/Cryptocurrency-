@@ -13,15 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithDefaultBackground()
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        RootWireframe.setupWith(window)
-        self.window = window
-        
         return true
     }
 
